@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Index</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+      <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+     <h1>All the Users</h1>
+     <div>
+        <table>
+         <thead>
+            <tr>
+            <th>ID</th> <!--this id, name .. is irrelavent to the code, just a name-->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            </tr>
+         </thead>
+         <tbody>
+           {% for i in all_users %} <!--"all_users" from views.py = db from models-->
+            <tr>
+            <td>{{i.id}}</td> <!--id, first_name .. is from models.py-->
+            <td>{{i.first_name}} {{i.last_name}}</td>
+            <td>{{i.email_address}}</td>
+            <td>{{i.age}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+     </div>
+      <hr>
+      <fieldset>
+        <legend>Add a User</legend>
+        <form action='/users' method='post'>
+            {% csrf_token %}
+            First Name: <input type='text' name='first_name'> <!--'first_name' is the key, later
+                                                                we will use in views.py-->
+            Last Name: <input type='text' name='last_name'>
+            Email: <input type='text' name='email'>
+            Age: <input type='number' name='age'>
+            <button type='submit'>Add</button>
+        </form>
+       </fieldset>
+    </body>   
+  </html>
+  <b

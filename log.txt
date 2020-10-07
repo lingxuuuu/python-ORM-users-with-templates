@@ -1,0 +1,256 @@
+User.objects.create(
+   first_name = 'Adam',
+    last_name = 'A',
+   email_address = 'adam.a@gmail.com',
+   age = '25',
+ )
+
+User.objects.create(
+   first_name = 'Ben',
+   last_name = 'B',
+    email_address = 'ben.b@gmail.com',
+    age = '20',
+ )
+
+User.objects.create(
+   first_name = 'Cindy',
+   last_name = 'C',
+   email_address = 'cindy.c@gmail.com',
+   age = '18',
+ )
+
+ 
+Microsoft Windows [Version 10.0.18363.1082]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm> python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\management\__init__.py", line 401, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\management\__init__.py", line 395, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\management\base.py", line 330, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\management\base.py", line 368, in execute
+    self.check()
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\management\base.py", line 392, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\checks\registry.py", line 70, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\checks\urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\core\checks\urls.py", line 23, in check_resolver
+    return check_method()
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\urls\resolvers.py", line 408, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\urls\resolvers.py", line 589, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\urls\resolvers.py", line 582, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\lingx\python\django\django_orm\single_model_orm\single_model_orm\urls.py", line 20, in <module>
+    path('', include ('users_app.urls')),
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\urls\conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 779, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 916, in get_code
+  File "<frozen importlib._bootstrap_external>", line 846, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "C:\Users\lingx\python\django\django_orm\single_model_orm\users_app\urls.py", line 4
+    urlpatterns = [
+    ^
+IndentationError: unexpected indent
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm> python manage.py makemigrations
+Migrations for 'users_app':
+  users_app\migrations\0001_initial.py
+    - Create model User
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, users_app
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying users_app.0001_initial... OK
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm>python manage.py shell
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> User.objects.createUser.objects.create(
+... #   first_name = Adam,
+... #    last_name = A,
+... #    email_address = adam.a@gmail.com,
+... #    age = 25,
+... User.objects.createUser.objects.create(
+...  
+KeyboardInterrupt
+>>> User.objects.create(first_name = Adam,last_name = A,email_address = adam.a@gmail.com, age = 25,)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User' is not defined
+>>> user1 = User.objects.create(
+...    first_name = Adam,
+...     last_name = A,
+...    email_address = adam.a@gmail.com,
+...    age = 25,
+...  )
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User' is not defined
+>>>
+KeyboardInterrupt
+>>> exit()
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm> python manage.py makemigrations
+No changes detected
+
+(py3Env) C:\Users\lingx\python\django\django_orm\single_model_orm>python manage.py shell
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from users_app.models import User
+>>> user1 = User.objects.create(
+...    first_name = Adam,
+...     last_name = A,
+...    email_address = adam.a@gmail.com,
+...    age = 25,
+...  )
+Traceback (most recent call last):
+  File "<console>", line 2, in <module>
+NameError: name 'Adam' is not defined
+>>> user1 = User.objects.create(
+...    first_name = 'Adam',
+...     last_name = 'A',
+...    email_address = 'adam.a@gmail.com',
+...    age = '25',
+...  )
+>>> user2 = User.objects.create(
+...    first_name = 'Ben',
+...    last_name = 'B',
+...     email_address = 'ben.b@gmail.com',
+...     age = '20',
+...  )user 3 = 
+  File "<console>", line 6
+    )user 3 =
+     ^
+SyntaxError: invalid syntax
+>>> User.objects.create(
+...    first_name = 'Cindy',
+...    last_name = 'C',
+...    email_address = 'cindy.c@gmail.com',
+...    age = '18',
+...  )
+<User: User object (2)>
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>]>
+>>> User.objects.first.name()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'function' object has no attribute 'name'
+>>> user2 = User.objects.create(
+...    first_name = 'Ben',
+...    last_name = 'B',   
+...     email_address = 'ben.b@gmail.com',
+...     age = '20',
+...  )
+>>> User.onjects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'onjects'
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>]>
+>>> User.objects.last()
+<User: User object (3)>
+>>> User.onjects.first_name.last()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'onjects'
+>>> User.objects.first_name.last()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'first_name'
+>>> User.objects.first()
+<User: User object (1)>
+>>> user3.first_name="Pancakes"
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user3' is not defined
+>>> User.objects.get(id=3)
+<User: User object (3)>
+>>> user2.first_name='Pancake"
+  File "<console>", line 1
+    user2.first_name='Pancake"
+                             ^
+SyntaxError: EOL while scanning string literal
+>>> user2.first_name="Pancake"
+>>> print(user2.first_name)
+Pancake
+>>> user2.objects.get(id=2).delete()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\manager.py", line 179, in __get__
+    raise AttributeError("Manager isn't accessible via %s instances" % cls.__name__)
+AttributeError: Manager isn't accessible via User instances
+>>> User.objects.get(id=2).delete()
+(1, {'users_app.User': 1})
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (3)>]>
+>>> User.objects.all()order_by('first_name')
+  File "<console>", line 1
+    User.objects.all()order_by('first_name')
+                      ^
+SyntaxError: invalid syntax
+>>> User.objects.all().order_by('first_name')
+<QuerySet [<User: User object (1)>, <User: User object (3)>]>
+>>> User.objects.all().order_by('-field_name')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\query.py", line 1134, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\sql\query.py", line 1919, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "C:\Users\lingx\AppData\Local\Programs\Python\Python38-32\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'field_name' into field. Choices are: age, created_at, email_address, first_name, id, last_name, updated_at     
+>>> User.objects.all().order_by('-first_name')
+<QuerySet [<User: User object (3)>, <User: User object (1)>]>
+>>>
